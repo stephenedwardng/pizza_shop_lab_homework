@@ -53,3 +53,26 @@ get '/customers/:id' do
   erb(:customer_show)
 end
 
+post '/customers' do
+  @customers = Customer.new(params)
+  @customers.save()
+  erb(:customer_create)
+end
+
+get '/customers/:id/edit' do 
+  @customers = Customer.find(params[:id])
+  erb(:customer_edit)
+end
+
+post '/customers/:id' do
+  @customers = Customer.find(params[:id])
+  @customer.update(params)
+  redirect to "/customers/#{params[:id]}"
+end
+
+post '/customers/:id/delete' do
+  @customers = Customer.find(params[:id])
+  @customers.delete()
+  redirect to "/customers"
+end
+
