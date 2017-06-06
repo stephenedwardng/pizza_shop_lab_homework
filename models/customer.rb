@@ -23,6 +23,11 @@ class Customer
    @id = result[0]['id'].to_i()
   end
 
+  def update()
+      sql = "UPDATE customers SET (name) =  '#{@name}' WHERE id = #{@id};"
+      SqlRunner.run(sql)
+  end
+
   def self.delete_all()
     sql = "DELETE FORM customers;"
     SqlRunner.run(sql)

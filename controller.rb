@@ -43,4 +43,13 @@ post '/pizza/:id/delete' do
   redirect to "/pizzas"
 end
 
+get '/customers' do
+  @customers = Customer.all()
+  erb(:customer_all)
+end
+
+get '/customers/:id' do
+  @customers = Customer.find(params[:id])
+  erb(:customer_show)
+end
 
