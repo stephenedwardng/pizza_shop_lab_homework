@@ -1,4 +1,4 @@
-<!--<p><a href="/customer">Customers</a></p>-->
+<p><a href="/customers/new">Create Customer</a></p>
 
 <p>All the customers!</p>
 
@@ -6,5 +6,6 @@
 
 <% for customer in @customers %>
   <p>Name: <%= customer.name %> </p>
+  <p><a href="/customers/<%= customer.id %>">Show customer</a></p>
   <hr />
 <% end %>

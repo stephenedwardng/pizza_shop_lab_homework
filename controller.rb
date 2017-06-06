@@ -48,6 +48,11 @@ get '/customers' do
   erb(:customer_all)
 end
 
+get '/customers/new' do 
+  @customers = Customer.all()
+  erb(:customer_new)
+end
+
 get '/customers/:id' do
   @customers = Customer.find(params[:id])
   erb(:customer_show)
